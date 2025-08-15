@@ -103,13 +103,13 @@ The interactive dashboard (`E_commerce_project.pbix`) visualizes:
 
 
 Page 1
-![Page 1](images/Page 1.png)
+![Page 1](images/Page1.png)
 
 Page 2
-![Page 2](images/Page 2.png)
+![Page 2](images/Page2.png)
 
 Page 3
-![Page 3](images/Page 3.png)
+![Page 3](images/Page3.png)
 
 
 ---------------------------
