@@ -1,176 +1,79 @@
-🛒 E-Commerce Data Analysis Project
-------------------------------------
+# 🛒 E-Commerce Data Analysis Project
 
+This project is a complete data analytics pipeline built to analyze a Brazilian E-commerce dataset. It demonstrates a full workflow from data ingestion and cleaning to analysis and interactive visualization, using **MySQL**, **Python (Pandas, SQLAlchemy)**, and **Power BI**.
 
-------------
-📌 Overview
-------------
+---
+##  briefcase Key Business Questions
+This project was designed to answer critical, industry-level questions that drive business strategy:
+* Who are our most valuable customers?
+* What are our key seasonal sales trends?
+* What are the preferred payment methods of our customers?
+* Where are the key inefficiencies in our delivery process?
 
+---
+## 🎯 At a Glance: Key Results
+The analysis uncovered several key performance indicators:
 
-This project is a **Data Analytics pipeline** built to analyze **Brazilian E-Commerce data** using **MySQL, Python (SQLAlchemy, Pandas), and Power BI**.  
-It covers the full process — from **data ingestion** and **database creation** to **data cleaning, transformation, and visualization**.
+| KPI | Result |
+| :-------------------------------------- | :-----------------: |
+| Revenue from Top 10% of Customers | **47.17%** |
+| Highest Sales Quarter | **Q2** |
+| Transactions via Credit Card | **73.81%** |
 
-The analysis provides insights into:
-- Customer purchasing patterns
-- Sales performance
-- Product category trends
-- Order delivery performance
-- Payment behavior
+---
+## 🔄 Project Workflow
+The project follows a standard data analytics workflow, moving from raw data to actionable insights.
 
+1.  **Database Creation:** A relational schema was designed and created in **MySQL** to structure the raw data from multiple CSV files.
+2.  **Data Cleaning & ETL:** A **Python** script using **Pandas** and **SQLAlchemy** was developed to connect to the database, clean inconsistencies, handle missing values, and merge the tables into a final, analysis-ready dataset.
+3.  **Dashboard Visualization:** The cleaned data was connected to **Power BI** to build a multi-page, interactive dashboard for visual analysis and insight generation.
 
----------------------
-📂 Project Structure
----------------------
+---
+## 📊 Power BI Dashboard Preview
+The final dashboard provides a comprehensive overview of sales, customer behavior, and delivery performance.
 
+### Page 1: Sales Overview
+![Sales Overview](Page1.png)
 
-E-Commerce-Data-Analysis
-│
-├── customers.csv # Customers dataset
-├── orders.csv # Orders dataset
-├── order_items.csv # Order items dataset
-├── products.csv # Products dataset
-├── payments.csv # Payments dataset
-│
-├── Table Creation.sql # SQL script to create database tables
-├── Table Import.sql # SQL script to import CSV data into MySQL
-├── E_commerce_project_sqlalchemy.ipynb # Python ETL & analysis with Pandas + SQLAlchemy
-├── E_commerce_project.pbix # Power BI dashboard file
-│
-└── README.md # Project documentation
- 
+### Page 2: Customer Analysis
+![Customer Analysis](Page2.png)
 
--------------------
-🗄️ Database Design
--------------------
+### Page 3: Product & Delivery Insights
+![Product & Delivery Insights](Page3.png)
 
+---
+## 💡 Key Insights Uncovered
 
-Relational schema was created in MySQL.
+* **Loyal Customers:** The top 10% of customers contribute to nearly half (47.17%) of total revenue, highlighting the importance of customer retention and loyalty programs.
+* **Sales Peaks:** Sales show a significant peak in the second quarter (Q2), suggesting opportunities for mid-year marketing campaigns.
+* **Payment Methods:** Credit cards are the dominant payment method, used in almost three-quarters of all purchases.
+* **Delivery Delays:** Analysis shows that delivery delays are most commonly linked to specific geographic regions, pointing to logistical bottlenecks.
 
-Tables:
-1. customers
-2. orders (linked to customers)
-3. order_items (linked to orders & products)
-4. products
-5. payments
+---
+## 🛠️ Tools & Technologies
+* **Database:** MySQL ``
+* **Data Processing:** Python `
 
-ER Diagram Overview:
+[Image of Python logo]
+` (with Pandas `` & SQLAlchemy)
+* **Visualization:** Power BI ``
+* **Environment:** Jupyter Notebook ``
 
-customers ───< orders ───< order_items >─── products
-│
-└───< payments
+---
+## 🚀 How to Run This Project
 
+1.  **Setup MySQL Database:**
+    * Create the database and tables using the `Table Creation.sql` script.
+    * Import the raw CSV data using the `Table Import.sql` script.
 
-----------------
-🔄 Data Loading
-----------------
+2.  **Run Python ETL Script:**
+    * Install necessary libraries: `pip install pandas sqlalchemy pymysql`
+    * Run the `E_commerce_project_sqlalchemy.ipynb` notebook to clean the data and save it to a new table.
 
+3.  **View Dashboard:**
+    * Open the `E_commerce_project.pbix` file in Power BI Desktop.
+    * Connect the dashboard to your local MySQL database and refresh the data source.
 
-The dataset CSV files are loaded into MySQL using:
-- `LOAD DATA INFILE` for bulk import
-- Script: [`Table Import.sql`](Table%20Import.sql)
-
-
----------------------------------------
-🐍 Python Integration (ETL & Analysis)
----------------------------------------
-
-
-- Tool: SQLAlchemy + Pandas
-- Purpose: Automate queries, data cleaning, and preprocessing
-- Script: [`E_commerce_project_sqlalchemy.ipynb`](E_commerce_project_sqlalchemy.ipynb)
-- Key tasks:
-  - Connecting Python to MySQL
-  - Querying data for insights
-  - Exporting cleaned data for Power BI
-
-----------------------
-📊 Power BI Dashboard
-----------------------
-
-
-The interactive dashboard (`E_commerce_project.pbix`) visualizes:
-- KPIs: Total Sales, Orders, Customers, Average Order Value
-- Sales by Product Category
-- Monthly Sales Trends
-- Order Status Distribution
-- Payment Method Usage
-- Delivery Performance
-
-
----------------------
-📸 Dashboard Preview
----------------------
-
-
-Page 1
-![Page 1](images/Page1.png)
-
-Page 2
-![Page 2](images/Page2.png)
-
-Page 3
-![Page 3](images/Page3.png)
-
-
----------------------------
-🚀 How to Run This Project
----------------------------
-
-
-1️⃣ Setup MySQL Database
-
--- Create tables
-SOURCE Table Creation.sql;
--- Import CSV data
-SOURCE Table Import.sql;
-
-2️⃣ Run Python Analysis
-
-pip install pandas sqlalchemy mysql-connector-python
-jupyter notebook E_commerce_project_sqlalchemy.ipynb
-
-3️⃣ Open Power BI Dashboard
-
-Open E_commerce_project.pbix in Power BI Desktop
-Refresh data connection if needed
-
-
-------------------------
-📈 Insights & Learnings
-------------------------
-
-
-Page 1 – Sales Overview
-
-Shows overall order volume, total revenue, and average order value trends.
-Highlights sales growth over time with noticeable seasonal peaks.
-Reveals top-earning product categories and monthly revenue patterns.
-
-Page 2 – Customers Insight
-
-Displays customer distribution across states and cities.
-Highlights which states generate the most orders.
-Shows preferred payment methods used by customers.
-
-Page 3 – Product & Delivery Insight
-
-Compares fastest and slowest delivery categories.
-Shows order count and revenue per product category.
-Analyzes how delivery times vary by product category.
-
-
-------------------------
-🛠️ Tools & Technologies
-------------------------
-
-
-Database: MySQL
-Data Processing: Python (Pandas, SQLAlchemy)
-Visualization: Power BI
-Data Source: CSV files
-
------------
-📜 License
------------
-
+---
+## 📜 License
 This project is licensed under the MIT License.
