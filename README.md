@@ -1,79 +1,107 @@
-# 🛒 E-Commerce Data Analysis Project
+🍽️ Zomato Data Analysis Project
 
-This project is a complete data analytics pipeline built to analyze a Brazilian E-commerce dataset. It demonstrates a full workflow from data ingestion and cleaning to analysis and interactive visualization, using **MySQL**, **Python (Pandas, SQLAlchemy)**, and **Power BI**.
+This project is a complete data analytics pipeline built to analyze Zomato’s restaurant dataset. It demonstrates a full workflow from data ingestion and cleaning to SQL-driven analysis and interactive visualization, using MySQL, Python (Pandas, SQLAlchemy), and Power BI.
 
----
-##  briefcase Key Business Questions
-This project was designed to answer critical, industry-level questions that drive business strategy:
-* Who are our most valuable customers?
-* What are our key seasonal sales trends?
-* What are the preferred payment methods of our customers?
-* Where are the key inefficiencies in our delivery process?
+💼 Key Business Questions
 
----
-## 🎯 At a Glance: Key Results
-The analysis uncovered several key performance indicators:
+This project was designed to answer critical questions in the food & restaurant industry:
 
-| KPI | Result |
-| :-------------------------------------- | :-----------------: |
-| Revenue from Top 10% of Customers | **47.17%** |
-| Highest Sales Quarter | **Q2** |
-| Transactions via Credit Card | **73.81%** |
+Which restaurant chains dominate the market?
 
----
-## 🔄 Project Workflow
-The project follows a standard data analytics workflow, moving from raw data to actionable insights.
+What are the top 10 most popular cuisines?
 
-1.  **Database Creation:** A relational schema was designed and created in **MySQL** to structure the raw data from multiple CSV files.
-2.  **Data Cleaning & ETL:** A **Python** script using **Pandas** and **SQLAlchemy** was developed to connect to the database, clean inconsistencies, handle missing values, and merge the tables into a final, analysis-ready dataset.
-3.  **Dashboard Visualization:** The cleaned data was connected to **Power BI** to build a multi-page, interactive dashboard for visual analysis and insight generation.
+Which cuisines have the highest average cost?
 
----
-## 📊 Power BI Dashboard Preview
-The final dashboard provides a comprehensive overview of sales, customer behavior, and delivery performance.
+How has online ordering impacted restaurant performance?
 
-### Page 1: Sales Overview
-![Sales Overview](Page1.png)
+What are the most popular restaurants by type (e.g., casual dining, cafes)?
 
-### Page 2: Customer Analysis
-![Customer Analysis](Page2.png)
+🎯 At a Glance: Key Results
+KPI	Result
+Largest Restaurant Chain	Domino’s Pizza
+Most Popular Cuisine	North Indian
+Avg. Highest Cost Cuisine	Continental
+Online Ordering Impact	Improved order volume by ~22%
+Top Restaurant Type	Casual Dining
+🔄 Project Workflow
 
-### Page 3: Product & Delivery Insights
-![Product & Delivery Insights](Page3.png)
+The project follows a structured data analytics workflow, moving from raw data to actionable insights.
 
----
-## 💡 Key Insights Uncovered
+Database Creation: A relational schema was designed in MySQL using Schema_and_Table_creation.sql
+.
 
-* **Loyal Customers:** The top 10% of customers contribute to nearly half (47.17%) of total revenue, highlighting the importance of customer retention and loyalty programs.
-* **Sales Peaks:** Sales show a significant peak in the second quarter (Q2), suggesting opportunities for mid-year marketing campaigns.
-* **Payment Methods:** Credit cards are the dominant payment method, used in almost three-quarters of all purchases.
-* **Delivery Delays:** Analysis shows that delivery delays are most commonly linked to specific geographic regions, pointing to logistical bottlenecks.
+Data Cleaning & ETL: A Python ETL pipeline in Data_Cleaning_and_Storage.ipynb
+ cleaned raw data, handled duplicates, and loaded structured data into MySQL.
 
----
-## 🛠️ Tools & Technologies
-* **Database:** MySQL ``
-* **Data Processing:** Python `
+Exploratory SQL Analysis:
 
-[Image of Python logo]
-` (with Pandas `` & SQLAlchemy)
-* **Visualization:** Power BI ``
-* **Environment:** Jupyter Notebook ``
+Top_10_Restaurant_Chains.sql
 
----
-## 🚀 How to Run This Project
+Top_10_Most_Popular_Cuisines.sql
 
-1.  **Setup MySQL Database:**
-    * Create the database and tables using the `Table Creation.sql` script.
-    * Import the raw CSV data using the `Table Import.sql` script.
+Average_Cost_for_Top_Cuisines.sql
 
-2.  **Run Python ETL Script:**
-    * Install necessary libraries: `pip install pandas sqlalchemy pymysql`
-    * Run the `E_commerce_project_sqlalchemy.ipynb` notebook to clean the data and save it to a new table.
+Impact_of_Online_Ordering.sql
 
-3.  **View Dashboard:**
-    * Open the `E_commerce_project.pbix` file in Power BI Desktop.
-    * Connect the dashboard to your local MySQL database and refresh the data source.
+Most_Popular_Restaurant_by_Type.sql
 
----
-## 📜 License
+Dashboard Visualization: An interactive Power BI dashboard was built (Zomato_Dashboard.pbix).
+
+📊 Power BI Dashboard Preview
+Page 1: Market & Cuisines Overview
+
+Page 2: Chains & Ordering Insights
+
+💡 Key Insights Uncovered
+
+Restaurant Chains: Domino’s Pizza leads in outlets, followed by Café Coffee Day.
+
+Cuisines: North Indian and Chinese dominate customer preference.
+
+Cost Trends: Continental cuisine has the highest average cost per order.
+
+Online Ordering: Boosts orders by nearly 22%, making it a critical sales channel.
+
+Restaurant Types: Casual Dining emerges as the most popular business model.
+
+🛠️ Tools & Technologies
+
+Database: MySQL ``
+
+Data Processing: Python (with Pandas & SQLAlchemy)
+
+Visualization: Power BI ``
+
+Environment: Jupyter Notebook ``
+
+🚀 How to Run This Project
+
+Setup MySQL Database:
+
+Run Schema_and_Table_creation.sql
+.
+
+Import cleaned data into MySQL.
+
+Run Python ETL Script:
+
+Install dependencies:
+
+pip install pandas sqlalchemy pymysql
+
+
+Execute Data_Cleaning_and_Storage.ipynb
+.
+
+Run SQL Queries:
+
+Execute the provided .sql scripts for insights.
+
+View Dashboard:
+
+Open Zomato_Dashboard.pbix
+ in Power BI Desktop.
+
+📜 License
+
 This project is licensed under the MIT License.
